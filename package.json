@@ -1,0 +1,24 @@
+{
+  "name": "sys4revolt",
+  "version": "7.4.2",
+  "type": "module",
+  "description": "SYSbot parsed to Revolt",
+  "main": "main.js",
+  "scripts": {
+    "test": "node --experimental-specifier-resolution=node main.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Common-Codes/SYS4Revolt.git"
+  },
+  "author": "TTS",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Common-Codes/SYS4Revolt/issues"
+  },
+  "homepage": "https://github.com/Common-Codes/SYS4Revolt#readme",
+  "dependencies": {
+    "node-fetch": "^3.2.1",
+    "revolt.js": "^5.2.8"
+  }
+}
