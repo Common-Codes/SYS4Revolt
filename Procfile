@@ -1,0 +1,1 @@
+Worker: node --experimental-specifier-resolution=node main.js

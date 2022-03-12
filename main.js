@@ -1,6 +1,7 @@
 import fetch from 'node-fetch';
 
 import { Client } from "revolt.js";
+const client = new Client;
 
 import fs from 'fs';
 
@@ -10,28 +11,31 @@ To note: This bot is coded in SYSlang originally, meaning I had no JS to work wi
 
 Parsed into Revolt by TallerThanShort with permission from V1RU5 and other members of the og bot dev team.
 */
-const botVersion = 'v07.15.02 (Alpha)'
-const upDate = '04/02/2022 at 17:26 pm'
+const botVersion = 'v7.4.2 (Alpha)'
+const upDate = '12/03/2022 at 17:48 pm'
 
 
+/* This is apparently how we set bot statuses, but didn't work for me
+client.req("PATCH", `/users/@me`, {
+	status: { presence: "Busy" }, //  you can also use "Idle", "Busy" or "Invisible" (the latter will make your bot appear offline though)
+});*/
 
-
-Client.on("ready", async () => {
-    // Below is how I imagine presence is set, doesn't work tho...
-    //await Client.user.setPresence({ activity: { name: "My AI Interface", type: "STREAMING", url: "https://www.twitch.tv/syslbot" }, status: 'idle'});
+client.on("ready", async () => {
     console.log('SYS4Revolt is ready!');
 });
 
-Client.on('message', message =>{
-    //if (!message.guild) return;
+// I have absolutely no clue how to make commands 'n shit
+client.on('message', message =>{
+    if (typeof message.content !== "string") return;
+    if (!message.server) return;
     if(!message.content.startsWith(prefix)) return;
-    //let channel = message.channel;
     const args = message.content.slice(prefix.length).split(/ +/);
     const command = args.shift().toLowerCase();
 
-    if(command === 'ping'){
-        Client.commands.get('ping').execute(message, args, Discord);
-    } else if(command === 'help'){
+    if(message.content === '!ping'){
+        console.log('message.content');
+        message.channel?.sendMessage("Pong!");
+    } /*else if(command === 'help'){
         Client.commands.get('help').execute(message, args, Discord);
     } else if(command === 'info'){
         Client.commands.get('info').execute(message, args, Discord, Client, botVersion, upDate);
@@ -53,7 +57,7 @@ Client.on('message', message =>{
         Client.commands.get('ban').execute(message, args);
     } else if(command === 'kick'){
         Client.commands.get('kick').execute(message, args);
-    }
+    }*/
 });
 
-Client.loginBot(process.env.token);
+client.loginBot(process.env.token);
