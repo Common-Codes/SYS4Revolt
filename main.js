@@ -25,7 +25,7 @@ client.on("ready", async () => {
 });
 
 // I have absolutely no clue how to make commands 'n shit
-client.on('message', message =>{
+client.on('message', async (message) =>{
     if (typeof message.content !== "string") return;
     if (!message.server) return;
     if(!message.content.startsWith(prefix)) return;
@@ -34,7 +34,7 @@ client.on('message', message =>{
 
     if(message.content === '!ping'){
         console.log('message.content');
-        message.channel?.sendMessage("Pong!");
+        message.channel.sendMessage("Pong!");
     } /*else if(command === 'help'){
         Client.commands.get('help').execute(message, args, Discord);
     } else if(command === 'info'){
