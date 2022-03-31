@@ -11,8 +11,8 @@ To note: This bot is coded in SYSlang originally, meaning I had no JS to work wi
 
 Parsed into Discord.js then Revolt.js by TallerThanShort with permission from V1RU5 and other members of the og bot dev team.
 */
-const botVersion = 'v7.4.2 (Alpha)'
-const upDate = '31/03/2022 at 18:20 pm'
+const botVersion = 'v7.4.9 (Alpha)'
+const upDate = '31/03/2022 at 18:54 pm'
 
 
 /* This is apparently how we set bot statuses, but didn't work for me
@@ -31,12 +31,21 @@ client.on("message", async (message) =>{
     if(!message.content.startsWith(prefix)) return;
     const args = message.content.slice(prefix.length).split(/ +/);
     const command = args.shift().toLowerCase();
-    console.log(message.content);
+    // used for debugging - only returns command invocations console.log(message.content);
+    let ogTimestamp = ''
+    let msgTimestamp = ''
 
     if(command === 'ping'){
-        message.channel?.sendMessage("Pong!");
+        ogTimestamp = Date.now();
+        message.channel?.sendMessage('Pong!').then(msg => {
+            msgTimestamp = Date.now()
+            console.log(ogTimestamp)
+            const ping =  msgTimestamp - ogTimestamp;
+            message.channel?.sendMessage(`Pong! ${ping}ms`);
+            console.log(`Pong! ${ping}ms`)
+        })
     } else if(command === 'help'){
-        message.channel?.sendMessage("WIP");
+        message.channel?.sendMessage(`Commands: \nPing \nHelp \nInfo \np \navatar`);
     } else if(command === 'info'){
         message.channel?.sendMessage("Bot Version " + botVersion + `\n Last updated: ` + upDate);
     } else if(command === 'p'){
