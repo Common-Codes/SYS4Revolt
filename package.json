@@ -16,7 +16,7 @@
   "bugs": {
     "url": "https://github.com/Common-Codes/SYS4Revolt/issues"
   },
-  "homepage": "https://github.com/Common-Codes/SYS4Revolt#readme",
+  "homepage": "https://github.com/Common-Codes/SYS4Revolt",
   "dependencies": {
     "node-fetch": "^3.2.1",
     "revolt.js": "^5.2.8"
