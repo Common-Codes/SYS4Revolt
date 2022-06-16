@@ -38,11 +38,9 @@ client.on("message", async (message) =>{
     if(command === 'ping'){
         ogTimestamp = Date.now();
         message.channel?.sendMessage('Pong!').then(msg => {
-            msgTimestamp = Date.now()
-            console.log(ogTimestamp)
+            msgTimestamp = Date.now();
             const ping =  msgTimestamp - ogTimestamp;
             message.channel?.sendMessage(`Pong! ${ping}ms`);
-            console.log(`Pong! ${ping}ms`)
         })
     } else if(command === 'help'){
         message.channel?.sendMessage(`Commands: \nPing \nHelp \nInfo \np \navatar`);
@@ -51,7 +49,7 @@ client.on("message", async (message) =>{
     } else if(command === 'p'){
         message.channel?.sendMessage('parcel');
     } else if(command === 'avatar'){
-        message.channel?.sendMessage(message.author.username)
+        message.channel?.sendMessage(`${message.author.username}\n` + 'https://autumn.revolt.chat/' + message.author.avatar.tag + '/' + message.author.avatar._id + '?max_side=256')
     }
 });
 
