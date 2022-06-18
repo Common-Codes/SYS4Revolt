@@ -11,8 +11,8 @@ To note: This bot is coded in SYSlang originally, meaning I had no JS to work wi
 
 Parsed into Discord.js then Revolt.js by TallerThanShort with permission from V1RU5 and other members of the og bot dev team.
 */
-const botVersion = 'v7.4.9 (Alpha)'
-const upDate = '31/03/2022 at 18:54 pm'
+const botVersion = 'v7.9 (Beta)'
+const upDate = '18/06/2022 at 21:27 pm CEST'
 
 
 /* This is apparently how we set bot statuses, but didn't work for me
