@@ -51,7 +51,7 @@ client.on("message", async (message) =>{
     } else if(command === 'avatar'){
         message.channel?.sendMessage(`${message.author.username}\n` + 'https://autumn.revolt.chat/' + message.author.avatar.tag + '/' + message.author.avatar._id + '?max_side=256');
     } else if(command === 'invite'){
-        message.channel?sendMessage(`[invite](https://app.revolt.chat)`)
+        message.channel?.sendMessage(`[invite](https://app.revolt.chat)`)
     }
 });
 
