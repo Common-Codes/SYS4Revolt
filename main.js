@@ -11,7 +11,7 @@ To note: This bot is coded in SYSlang originally, meaning I had no JS to work wi
 
 Parsed into Discord.js then Revolt.js by TallerThanShort with permission from V1RU5 and other members of the og bot dev team.
 */
-const botVersion = 'v7.9.4 (Beta)'
+const botVersion = 'v7.9.5 (Beta)'
 const upDate = '19/06/2022 at 18:24 pm CEST'
 
 
@@ -52,6 +52,7 @@ client.on("message", async (message) =>{
         message.channel?.sendMessage(`${message.author.username}\n` + 'https://autumn.revolt.chat/' + message.author.avatar.tag + '/' + message.author.avatar._id + '?max_side=256');
     } else if(command === 'invite'){
         message.channel?sendMessage(`[invite](https://app.revolt.chat)`);
+    }
 });
 
 client.loginBot(process.env.token);
