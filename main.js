@@ -49,7 +49,7 @@ client.on("message", async (message) =>{
     } else if(command === 'p'){
         message.channel?.sendMessage('parcel');
     } else if(command === 'avatar'){
-        message.channel?.sendMessage(`[${message.author.username}](https://autumn.revolt.chat/${message.author.avatar.tag}/${message.author._id}?max_side=256)`);
+        message.channel?.sendMessage(`[${message.author.username}](https://autumn.revolt.chat/${message.author.avatar.tag}/${message.author.avatar._id}?max_side=256)`);
     } else if(command === 'invite'){
         message.channel?.sendMessage(`[invite](https://app.revolt.chat/bot/01FWVFN7XYSJQ6BWE8SPJKHGRQ)`)
     }
