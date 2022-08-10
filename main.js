@@ -11,8 +11,8 @@ To note: This bot is coded in SYSlang originally, meaning I had no JS to work wi
 
 Parsed into Discord.js then Revolt.js by TallerThanShort with permission from V1RU5 and other members of the og bot dev team.
 */
-const botVersion = 'v7.9.9 (Beta)'
-const upDate = '20/06/2022 at 18:55 pm CEST'
+const botVersion = 'v8.0.0 (Beta)'
+const upDate = '10/08/2022 at 19:37 pm CEST'
 
 
 /* This is how we set bot statuses, but it requires importing the main API
@@ -51,7 +51,7 @@ client.on("message", async (message) =>{
     } else if(command === 'avatar'){
         message.channel?.sendMessage(`[${message.author.username}](https://autumn.revolt.chat/${message.author.avatar.tag}/${message.author.avatar._id}?max_side=256)`);
     } else if(command === 'invite'){
-        message.channel?.sendMessage(`[invite](https://app.revolt.chat/bot/01FWVFN7XYSJQ6BWE8SPJKHGRQ)`)
+        message.channel?.sendMessage(`[Invite me](https://bot.systemware.ga/invite) to your server!`)
     }
 });
 
